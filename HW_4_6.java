@@ -12,7 +12,6 @@ class Circle{
     }
     public int square(){return radius*radius;}
 }
-
 public class HW_4_6 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -25,15 +24,16 @@ public class HW_4_6 {
             c[i]=new Circle(x,y,r);
         }
         int max=0;
-        int res=0;
+        int tmp=0;
         for(int i=0;i<c.length;i++){
-            if(res<c[i].square()) {
-                res=c[i].square();
-                max = i;
+            if(max<c[i].square()) {
+                max = c[i].square();
+                tmp=i;
             }
+
         }
-        System.out.print("가장 면적이 큰 원은 ");
-        c[max].show();
+        System.out.print("가장 면적이 큰 원은");
+        c[tmp].show();
         scanner.close();
     }
 }
